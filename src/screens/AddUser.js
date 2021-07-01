@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {connect} from 'react-redux';
 import {addNewUser, getUserList} from '../actions';
 import Geolocation from '@react-native-community/geolocation';
+import {defineAnimation} from 'react-native-reanimated';
 
 Icon.loadFont();
 
@@ -100,18 +101,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
-  return {
-    users: state.users.users,
-    isFetching: state.users.isFetching,
-  };
-};
+export default AddUser;
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getUserList: () => dispatch(getUserList()),
-    addNewUser: data => dispatch(addNewUser(data)),
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     users: state.users.users,
+//     isFetching: state.users.isFetching,
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddUser);
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getUserList: () => dispatch(getUserList()),
+//     addNewUser: data => dispatch(addNewUser(data)),
+//   };
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(AddUser);
